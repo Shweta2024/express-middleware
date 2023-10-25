@@ -1,3 +1,13 @@
+References:- 
+- 
+- [Writing Middleware](https://expressjs.com/en/guide/writing-middleware.html)
+
+- [Using Middleware](https://expressjs.com/en/guide/using-middleware.html)
+
+- [Middleware : Medium Article](https://selvaganesh93.medium.com/how-node-js-middleware-works-d8e02a936113)
+
+<br>
+
 <h2>Middleware</h2>
 
 - Any function that executes between the server gets the request and the server sends the response. It runs in the order that we define it.
@@ -51,3 +61,20 @@ Middleware functions can perform the following tasks:-
 
 - It is applied on all the route.
 
+<br>
+
+<h3>Types of Middleware in Express</h3>
+
+1. Application-level middleware
+
+- It is like a global middleware which gets executed/called everytime we make a request(i.e everytime we hit a route).
+
+- In the examples both ```myLogger``` & ```requestTime``` are application-level middleware.
+
+2. Route-level middleware
+
+- It is bound/specific to a route.
+
+![Alt text](image-4.png)
+
+- The ```getUser``` middleware is bound only to the ```users``` route and won't work for the root route.

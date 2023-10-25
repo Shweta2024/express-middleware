@@ -32,7 +32,8 @@ Middleware functions can perform the following tasks:-
     NOTE: If the current middleware does not ends the request-response cycle, then, it must call the next() function to pass on the control to the next middleware. Otherwise the request will be left hanging.
 
 <br>
-<h3>Examples:-</h3>
+
+<h2>Examples:-</h2>
 
 <h3>1. Execute any Code</h3>
 
@@ -63,18 +64,63 @@ Middleware functions can perform the following tasks:-
 
 <br>
 
-<h3>Types of Middleware in Express</h3>
+<h2>Types of Middleware in Express</h2>
 
-1. Application-level middleware
+<br>
+
+
+<h3>1. Application-level middleware</h3>
 
 - It is like a global middleware which gets executed/called everytime we make a request(i.e everytime we hit a route).
 
 - In the examples both ```myLogger``` & ```requestTime``` are application-level middleware.
 
-2. Route-level middleware
+<br>
+
+
+<h3>2. Route-level middleware</h3>
 
 - It is bound/specific to a route.
 
 ![Alt text](image-4.png)
 
 - The ```getUser``` middleware is bound only to the ```users``` route and won't work for the root route.
+
+
+
+<br>
+
+
+<h3>3. Error Handling middleware</h3>
+
+- It takes 4 arguments and we must provide 4 arguments to identify a middleware as an error handling middleware.
+
+eg:-
+
+```js
+
+const errorHandler = (err,req,res,next) => {
+    res.send(err.message)
+}
+
+```
+
+
+<br>
+
+
+<h3>4. Built-in middleware</h3>
+
+- **express.static** : to serve the static files like: html, css, images etc.
+- **express.json** : parse incoming request to process the json data.
+- **express.urlencoded** : parse incoming reuest to process the url-encoded data. 
+
+
+<br>
+
+
+<h3>5. Third-Party middleware</h3>
+
+- We need to install them and then we can use them at application level or router level according to our needs.
+
+- Example:- body-parser, cookie-session, cookie-parser etc.

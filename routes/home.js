@@ -3,7 +3,8 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     console.log(req.originalUrl)
-    res.send('Home Page')
+    let text = 'Home Page' + ` Requested at: ${req.requestTime}`
+    res.send(text)
 })
 
 module.exports = router

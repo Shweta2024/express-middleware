@@ -3,7 +3,8 @@ const router = express.Router()
 
 router.get('/users', (req, res) => {
     console.log(req.originalUrl)
-    res.send('Users Page')
+    let text = 'Users Page' + ` Requested at : ${req.requestTime}`
+    res.send(text)
 })
 
 module.exports = router

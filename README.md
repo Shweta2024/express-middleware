@@ -24,6 +24,8 @@ Middleware functions can perform the following tasks:-
 <br>
 <h3>Examples:-</h3>
 
+<h3>1. Execute any Code</h3>
+
 ![Alt text](image-1.png)
 
 - Each time the app recieves a request to any route(root & users in this case), it prints ```Logged``` to the terminal, because ```myLogger``` is a global middleware in this case.
@@ -33,4 +35,19 @@ Middleware functions can perform the following tasks:-
 <br>
         
     NOTE: If myLogger is loaded after the routes(root & users), then the control never reachers to the myLogger middleware and 'Logged' never gets prints to the terminal. It is because the route handlers of the root & users, terminates the request-response cycle. Hence, it is important to load myLogger before loading/writing the routes, if we want the middleware to get executed each time before we hit that route.
+
+<br>
+
+<h3>2. Make change in the Request Object</h3>
+
+
+![Alt text](image-2.png)
+
+![Alt text](image-3.png)
+
+- We have created the ```requestTime``` middleware that makes change in the ```request object(req)``` by adding the ```requestTime``` property to it(the name of the property can be anything).
+
+- Now, whenever we hit(make request to) any of the route(root or users), we'll be able to see the time at which the route was requested.
+
+- It is applied on all the route.
 

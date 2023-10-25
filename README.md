@@ -16,7 +16,10 @@ References:-
 
 - The ```next``` function, when called, it invokes the next middleware which is after the current middleware.
 
-- To load a middleware we write ```app.use(middlewareName)```
+- To load a middleware we write ```app.use(middlewareName)```.
+
+-  We can add multiple middleware to the application or to any particular route, and they will be exectuted in the order in which they have been loaded.
+
 
 <br>
 
@@ -66,7 +69,9 @@ Middleware functions can perform the following tasks:-
 
 <h2>Types of Middleware in Express</h2>
 
-<br>
+
+![Alt text](images/image-5.png)
+
 
 
 <h3>1. Application-level middleware</h3>
@@ -124,3 +129,23 @@ const errorHandler = (err,req,res,next) => {
 - We need to install them and then we can use them at application level or router level according to our needs.
 
 - Example:- body-parser, cookie-session, cookie-parser etc.
+
+
+
+<br>
+<hr>
+<br>
+
+<h3>Writing multiple middleware for a particular route.</h3>
+
+- note in the below example middleware1 will be executed first and then middleware2 will be executed followed by middleware3 and then the callback function(which is also a middleware btw).
+
+- note it is neccessary to call next() after each of these middleware.
+
+```js
+
+app.get('/', middleware1, middleware2, middleware3, (req,res) => {
+    console.log('Home route')
+})
+
+```

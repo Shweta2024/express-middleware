@@ -37,7 +37,7 @@ Middleware functions can perform the following tasks:-
 
 <h3>1. Execute any Code</h3>
 
-![Alt text](image-1.png)
+![Alt text](images/image-1.png)
 
 - Each time the app recieves a request to any route(root & users in this case), it prints ```Logged``` to the terminal, because ```myLogger``` is a global middleware in this case.
 
@@ -52,9 +52,9 @@ Middleware functions can perform the following tasks:-
 <h3>2. Make change in the Request Object</h3>
 
 
-![Alt text](image-2.png)
+![Alt text](images/image-2.png)
 
-![Alt text](image-3.png)
+![Alt text](images/image-3.png)
 
 - We have created the ```requestTime``` middleware that makes change in the ```request object(req)``` by adding the ```requestTime``` property to it(the name of the property can be anything).
 
@@ -82,7 +82,7 @@ Middleware functions can perform the following tasks:-
 
 - It is bound/specific to a route.
 
-![Alt text](image-4.png)
+![Alt text](images/image-4.png)
 
 - The ```getUser``` middleware is bound only to the ```users``` route and won't work for the root route.
 
